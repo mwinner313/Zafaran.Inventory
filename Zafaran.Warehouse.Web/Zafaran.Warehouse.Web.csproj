@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile>bin\Debug\netcoreapp2.1\Zafaran.Warehouse.Web.xml</DocumentationFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection">
+          <Version>5.0.1</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.4" />
+        <PackageReference Include="Swashbuckle.AspNetCore">
+          <Version>3.0.0</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <!-- Files not to show in IDE -->
+        <None Remove="yarn.lock" />
+
+        <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+        <Content Remove="ClientApp\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Zafaran.Warehouse.Infrastructure\Zafaran.Warehouse.Infrastructure.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.Extensions.Identity.Core, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+            <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.core\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Identity.Core.dll</HintPath>
+        </Reference>
+      <Reference Include="Microsoft.Extensions.Identity.Stores, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>C:\Users\mohmmadali\.nuget\packages\microsoft.extensions.identity.stores\2.2.0-preview2-35157\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
+        <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+        <Exec Command="node -e &quot;console.log('NPM Installing dependencies...')&quot;" />
+        <Exec Command="npm install --ignore-scripts" />
+        <Exec Command="npm run build" />
+
+        <!-- Include the newly-built files in the publish output -->
+        <ItemGroup>
+            <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+            <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+                <RelativePath>%(DistFiles.Identity)</RelativePath>
+                <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+            </ResolvedFileToPublish>
+        </ItemGroup>
+    </Target>
+</Project>

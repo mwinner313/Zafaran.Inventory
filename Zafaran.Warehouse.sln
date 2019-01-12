@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zafaran.Warehouse.Core", "Zafaran.Warehouse.Core\Zafaran.Warehouse.Core.csproj", "{E4DDCF3D-26A8-48FF-8A2B-CB50689087EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zafaran.Warehouse.Web", "Zafaran.Warehouse.Web\Zafaran.Warehouse.Web.csproj", "{40C20277-45AD-45DC-AB4B-24758C39EDD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zafaran.Warehouse.Infrastructure", "Zafaran.Warehouse.Infrastructure\Zafaran.Warehouse.Infrastructure.csproj", "{A2965D8A-6867-46C0-A192-AAED13C555FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4DDCF3D-26A8-48FF-8A2B-CB50689087EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DDCF3D-26A8-48FF-8A2B-CB50689087EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DDCF3D-26A8-48FF-8A2B-CB50689087EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DDCF3D-26A8-48FF-8A2B-CB50689087EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C20277-45AD-45DC-AB4B-24758C39EDD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C20277-45AD-45DC-AB4B-24758C39EDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C20277-45AD-45DC-AB4B-24758C39EDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C20277-45AD-45DC-AB4B-24758C39EDD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2965D8A-6867-46C0-A192-AAED13C555FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2965D8A-6867-46C0-A192-AAED13C555FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2965D8A-6867-46C0-A192-AAED13C555FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2965D8A-6867-46C0-A192-AAED13C555FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
